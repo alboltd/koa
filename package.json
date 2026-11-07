@@ -60,6 +60,7 @@
   "name": "koa",
   "overrides": {
     "js-yaml": "4.3.2",
+    "minimatch": "11.0.1",
     "qs": "6.17.1"
   },
   "repository": "koajs/koa",
