@@ -59,7 +59,8 @@
   "main": "lib/application.js",
   "name": "koa",
   "overrides": {
-    "js-yaml": "4.3.2"
+    "js-yaml": "4.3.2",
+    "qs": "6.17.1"
   },
   "repository": "koajs/koa",
   "scripts": {
