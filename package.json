@@ -1,40 +1,4 @@
 {
-  "name": "koa",
-  "version": "3.3.0",
-  "description": "Koa web app framework",
-  "main": "lib/application.js",
-  "exports": {
-    ".": {
-      "require": "./lib/application.js",
-      "import": "./dist/koa.mjs",
-      "default": "./dist/koa.mjs"
-    },
-    "./*": "./*.js",
-    "./*.js": "./*.js",
-    "./package": "./package.json",
-    "./package.json": "./package.json"
-  },
-  "scripts": {
-    "test": "node --test",
-    "test:coverage": "c8 --reporter=lcov --reporter=text-summary node --test",
-    "lint": "standard",
-    "lint:fix": "standard --fix",
-    "lint:pretty": "standard | snazzy",
-    "authors": "git log --format='%aN <%aE>' | sort -u > AUTHORS",
-    "build": "gen-esm-wrapper . ./dist/koa.mjs",
-    "prepare": "npm run build"
-  },
-  "repository": "koajs/koa",
-  "keywords": [
-    "web",
-    "app",
-    "http",
-    "application",
-    "framework",
-    "middleware",
-    "rack"
-  ],
-  "license": "MIT",
   "dependencies": {
     "accepts": "^1.3.8",
     "content-disposition": "~1.0.1",
@@ -55,6 +19,7 @@
     "type-is": "^2.0.1",
     "vary": "^1.1.2"
   },
+  "description": "Koa web app framework",
   "devDependencies": {
     "c8": "^12.0.0",
     "gen-esm-wrapper": "^1.1.3",
@@ -63,11 +28,49 @@
     "supertest": "^7.1.1"
   },
   "engines": {
-    "node": ">= 18"
+    "node": "\u003e= 18"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/koa.mjs",
+      "import": "./dist/koa.mjs",
+      "require": "./lib/application.js"
+    },
+    "./*": "./*.js",
+    "./*.js": "./*.js",
+    "./package": "./package.json",
+    "./package.json": "./package.json"
   },
   "files": [
     "dist",
     "lib"
   ],
-  "homepage": "https://koajs.com"
+  "homepage": "https://koajs.com",
+  "keywords": [
+    "web",
+    "app",
+    "http",
+    "application",
+    "framework",
+    "middleware",
+    "rack"
+  ],
+  "license": "MIT",
+  "main": "lib/application.js",
+  "name": "koa",
+  "overrides": {
+    "js-yaml": "4.3.2"
+  },
+  "repository": "koajs/koa",
+  "scripts": {
+    "authors": "git log --format='%aN \u003c%aE\u003e' | sort -u \u003e AUTHORS",
+    "build": "gen-esm-wrapper . ./dist/koa.mjs",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "lint:pretty": "standard | snazzy",
+    "prepare": "npm run build",
+    "test": "node --test",
+    "test:coverage": "c8 --reporter=lcov --reporter=text-summary node --test"
+  },
+  "version": "3.3.0"
 }
